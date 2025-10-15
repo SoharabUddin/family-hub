@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Family Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🏠 Family Hub</h1>
+    <p>Manage family members, tasks, inventory, finance, and reminders (backed by Google Sheets)</p>
+  </header>
+
+  <nav class="tabs">
+    <button data-tab="family" class="active">Family</button>
+    <button data-tab="tasks">Tasks</button>
+    <button data-tab="inventory">Inventory</button>
+    <button data-tab="finance">Finance</button>
+    <button data-tab="reminders">Reminders</button>
+  </nav>
+
+  <main>
+    <!-- Family -->
+    <section id="family" class="tab-pane active">
+      <h2>Family Members</h2>
+      <form id="familyForm" class="inline-form">
+        <input id="fm_Name" placeholder="Name" required />
+        <input id="fm_Age" placeholder="Age" type="number" />
+        <input id="fm_Relation" placeholder="Relation" />
+        <input id="fm_Contact" placeholder="Contact" />
+        <button type="submit">Add Member</button>
+      </form>
+      <div id="familyList" class="list"></div>
+    </section>
+
+    <!-- Tasks -->
+    <section id="tasks" class="tab-pane">
+      <h2>Tasks</h2>
+      <form id="taskForm" class="inline-form">
+        <input id="t_Task" placeholder="Task" required />
+        <input id="t_AssignedTo" placeholder="Assigned To" />
+        <input id="t_Date" type="date" />
+        <select id="t_Priority"><option value="">Priority</option><option>Low</option><option>Medium</option><option>High</option></select>
+        <button type="submit">Add Task</button>
+      </form>
+      <div id="tasksList" class="list"></div>
+    </section>
+
+    <!-- Inventory -->
+    <section id="inventory" class="tab-pane">
+      <h2>Inventory</h2>
+      <form id="invForm" class="inline-form">
+        <input id="i_Item" placeholder="Item" required />
+        <input id="i_Qty" placeholder="Qty" type="number" />
+        <input id="i_Category" placeholder="Category" />
+        <input id="i_Condition" placeholder="Condition" />
+        <label><input id="i_Needed" type="checkbox" /> Needed</label>
+        <label><input id="i_ToSell" type="checkbox" /> To Sell/Give</label>
+        <button type="submit">Add Item</button>
+      </form>
+      <div id="inventoryList" class="list"></div>
+    </section>
+
+    <!-- Finance -->
+    <section id="finance" class="tab-pane">
+      <h2>Finance</h2>
+      <form id="finForm" class="inline-form">
+        <input id="f_Date" type="date" />
+        <input id="f_Desc" placeholder="Description" required />
+        <input id="f_Amount" placeholder="Amount" type="number" step="0.01" required />
+        <select id="f_Type"><option value="Expense">Expense</option><option value="Income">Income</option></select>
+        <button type="submit">Add Record</button>
+      </form>
+      <div id="financeList" class="list"></div>
+      <div id="financeSummary" class="summary"></div>
+    </section>
+
+    <!-- Reminders -->
+    <section id="reminders" class="tab-pane">
+      <h2>Reminders & Events</h2>
+      <form id="remForm" class="inline-form">
+        <input id="r_Event" placeholder="Event name" required/>
+        <input id="r_Date" type="date" />
+        <select id="r_Type"><option>Birthday</option><option>Anniversary</option><option>Bill</option><option>Other</option></select>
+        <button type="submit">Add Reminder</button>
+      </form>
+      <div id="remindersList" class="list"></div>
+    </section>
+  </main>
+
+  <!-- Edit Modal (simple) -->
+  <div id="editModal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="editTitle">Edit</h3>
+      <div id="editForm"></div>
+      <div class="modal-actions">
+        <button id="saveEdit">Save</button>
+        <button id="cancelEdit">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <small>Hosted on GitHub Pages • Data stored in your Google Sheet</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
