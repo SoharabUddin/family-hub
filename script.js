@@ -4,7 +4,7 @@
      FamilyMembers, Tasks, Inventory, Finance, Reminders
 */
 
-const API_URL = "https://script.google.com/macros/s/AKfycbzkBr6S48qHj7YC0X2VJcNFya_M2JfvTB-bar1JWOF_nKTI_ZL3bAN3dtO83ai1Iqdpeg/exec"; // <<---- REPLACE THIS
+const API_URL = "https://script.google.com/macros/s/AKfycbwtpUy5onDHvIQelknIpp6f4kGwRETjSJpimTo7I1KWnnwBxAbsYV0dF2A3kj8O7Kj4FQ/exec"; // <<---- REPLACE THIS
 
 const SHEETS = {
   family: "FamilyMembers",
